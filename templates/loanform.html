@@ -1,0 +1,48 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Loan Management</title>
+	<link rel="stylesheet" href= "{% static 'styles/style.css' %}" type="text/css">
+</head>
+<body>
+<div class="main">
+<div class="Loan">
+	<h2>Loan Details</h2>
+	<form action="/loancal/" id="loan" method="POST">
+	{% csrf_token %}
+	<label> Loan Amount: </label>
+	<br>
+	<input type="number" name="loanamt"
+	id="name" placeholder="Enter your Loan amount ">
+	<br><br>
+	
+	<label> Duration of Loan: </label>
+	<br>
+	<input type="numeric" id="loanduration" name="loanduration" placeholder="Enter Days">
+	<br><br>
+	
+	<label for="Rateofinterest">Rate of interest: </label>
+	<select name="rateofinterest" id="rateofinterest">
+    <option value="10">10</option>
+    <option value="15">15</option>
+    <option value="20">20</option>
+	<option value="25">25</option>
+    <option value="30">30</option>
+    <option value="35">35</option>
+	<option value="40">40</option>
+    <option value="45">45</option>
+    <option value="50">50</option>
+	
+	</select>
+	<br><br>
+	
+	<label for="transaction"> Transaction Date: </label>
+	<input type="date" id="transactiondate" name="transactiondate" placeholder="Enter Transaction Date ">
+	<br><br>
+	
+	<input type = "submit" value="Submit"
+	name="submit" id="submit">
+	
+</body>
+</html>
