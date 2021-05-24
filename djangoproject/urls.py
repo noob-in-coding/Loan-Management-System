@@ -25,5 +25,6 @@ urlpatterns = [
     path('regform/',views.regform),
     path('regform/loanform.html',views.secondpage),
     path('loancal/',views.loancal),
+    path('serverside/',views.backnd),
 
 ]

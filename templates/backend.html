@@ -1,0 +1,82 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href= "{% static 'styles/style.css' %}" type="text/css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan management serverside</title>
+    <style>
+        th,td{
+
+            border: 1px black solid;
+        }
+    </style>
+</head>
+<body>
+    
+    
+    {% if re %}
+    <h2>Registration details</h2>
+    
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Mobileno</th>
+            <th>Address</th>
+            <th>City</th>
+            <th>State</th>
+
+        </tr>
+        {% for r in re %}
+        <tr>
+            <td>{{r.id}}</td>  
+            <td>{{r.name}}</td> 
+            <td>{{r.mobileno}}</td> 
+            <td>{{r.address}}</td>   
+            <td>{{r.city}}</td> 
+            <td>{{r.state}}</td> 
+
+        </tr>
+        {% endfor %}
+
+    </table>
+    {% else %}
+        <h4>no data</h4>
+    {% endif %}
+
+
+    {% if lo %}
+    <h2>loan details</h2>
+    
+    <table>
+        <tr>
+            <th>id</th>
+            <th>loan_amount</th>
+            <th>Duration_of_loan</th>
+            <th>Rate of interest</th>
+            
+
+        </tr>
+        {% for l in lo %}
+        <tr>
+            <td>{{l.id}}</td>  
+            <td>{{l.loanamt}}</td> 
+            <td>{{l.duration_of_loan}}</td> 
+            <td>{{l.ROI}}</td>   
+            
+        </tr>
+        {% endfor %}
+
+    </table>
+    {% else %}
+        <h4>no data</h4>
+    {% endif %}
+
+
+
+
+</body>
+</html>

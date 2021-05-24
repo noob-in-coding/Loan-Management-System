@@ -46,4 +46,10 @@ def loancal(request):
     q=f+y
     return render(request,'payableamt.html',{'result':Ci,'duedate':q,'curdate':f})
 
- 
+#for showing data stored in the backend
+
+def backnd(request):
+    reg=Register.objects.all()
+    lon=Loan.objects.all()
+  
+    return render(request,'backend.html',{'re' : reg ,'lo' : lon })
